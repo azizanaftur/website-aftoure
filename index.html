@@ -1,41 +1,41 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aftour — Home</title>
+<title>Azizan Aftur — Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LOADING OVERLAY -->
+<!-- ============ LOADER ============ -->
 <div class="loader" id="loader">
   <div class="loader-scan"></div>
   <div class="loader-text">
     <span>&gt; initializing system...</span>
-    <span>&gt; loading page <b id="loaderPage">home</b>...</span>
+    <span>&gt; loading portfolio...</span>
     <span>&gt; status: <b class="ok">OK</b></span>
   </div>
 </div>
 
-<!-- GRID BACKGROUND -->
+<!-- ============ GRID BG ============ -->
 <div class="grid-bg"></div>
 
-<!-- NAVBAR -->
+<!-- ============ NAVBAR ============ -->
 <nav>
   <div class="logo">
     <span class="bracket">[</span>azizan<span class="at">@</span>aftour<span class="bracket">]</span>
   </div>
   <ul>
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="project.html">Project</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
+<!-- ============ HOME / HERO ============ -->
+<header class="hero" id="home">
   <div class="coord top-left">X: 108.5</div>
   <div class="coord top-right">Y: 32.7</div>
 
@@ -44,12 +44,12 @@
     <h1>Azizan<br><span>Aftur</span></h1>
     <p class="subtitle">Teknik Komputer &amp; Jaringan</p>
     <p class="desc">
-      Membangun infrastruktur jaringan yang handal, 
+      Membangun infrastruktur jaringan yang handal,
       mengelola server, dan mendalami dunia cybersecurity.
     </p>
     <div class="buttons">
-      <a href="project.html" class="btn primary">Lihat Project →</a>
-      <a href="contact.html" class="btn">Hubungi Saya</a>
+      <a href="#project" class="btn primary">Lihat Project →</a>
+      <a href="#contact" class="btn">Hubungi Saya</a>
     </div>
   </div>
 
@@ -57,28 +57,136 @@
   <div class="coord bottom-right">REV: 1.0</div>
 </header>
 
-<!-- PREVIEW SECTION -->
-<section class="preview">
-  <h2>// Quick Overview</h2>
-  <div class="preview-grid">
-    <div class="prev-card">
-      <div class="num">01</div>
-      <h3>Networking</h3>
-      <p>Mikrotik, Cisco, TCP/IP, VLAN</p>
+<!-- ============ ABOUT ============ -->
+<section class="content" id="about">
+  <div class="page-header">
+    <p class="tag">// ABOUT ME</p>
+    <h1>Tentang <span>Saya</span></h1>
+  </div>
+
+  <div class="about-grid">
+    <div class="avatar-box">
+      <div class="avatar-initial">AZ</div>
+      <p class="avatar-label">// PHOTO PENDING</p>
     </div>
-    <div class="prev-card">
-      <div class="num">02</div>
-      <h3>Server</h3>
-      <p>Linux, Windows Server, VPS</p>
-    </div>
-    <div class="prev-card">
-      <div class="num">03</div>
-      <h3>Security</h3>
-      <p>Firewall, dasar pentesting</p>
+
+    <div class="about-text">
+      <h2>// Siapa Saya?</h2>
+      <p>
+        Halo! Saya <b>Azizan Aftur</b>, siswa <b>Teknik Komputer &amp; Jaringan (TKJ)</b>
+        yang passionate di dunia networking, server administration, dan cybersecurity.
+      </p>
+      <p>
+        Saya suka ngulik Linux, konfigurasi Mikrotik, dan belajar hal-hal baru tentang
+        infrastruktur IT. Tujuan saya: jadi Network Engineer yang handal.
+      </p>
+
+      <h2>// Pendidikan</h2>
+      <ul class="timeline">
+        <li><span class="year">2023 - Sekarang</span> SMK — Teknik Komputer &amp; Jaringan</li>
+        <li><span class="year">2020 - 2023</span> SMP</li>
+        <li><span class="year">2014 - 2020</span> SD</li>
+      </ul>
+
+      <h2>// Skills</h2>
+      <div class="skills">
+        <div class="skill"><span>Networking</span><div class="bar"><div style="width:80%"></div></div></div>
+        <div class="skill"><span>Linux</span><div class="bar"><div style="width:75%"></div></div></div>
+        <div class="skill"><span>Mikrotik</span><div class="bar"><div style="width:70%"></div></div></div>
+        <div class="skill"><span>Hardware</span><div class="bar"><div style="width:65%"></div></div></div>
+        <div class="skill"><span>Security</span><div class="bar"><div style="width:55%"></div></div></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ============ PROJECT ============ -->
+<section class="content" id="project">
+  <div class="page-header">
+    <p class="tag">// MY WORKS</p>
+    <h1>Project <span>Saya</span></h1>
+  </div>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="project-num">01 / NETWORKING</div>
+      <h3>Konfigurasi VLAN</h3>
+      <p>Membangun VLAN di switch managed untuk segmentasi jaringan kantor kecil.</p>
+      <div class="tags"><span>Mikrotik</span><span>VLAN</span><span>Switch</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">02 / SERVER</div>
+      <h3>Setup Web Server</h3>
+      <p>Instalasi &amp; konfigurasi Nginx + PHP + MySQL di VPS Ubuntu.</p>
+      <div class="tags"><span>Linux</span><span>Nginx</span><span>VPS</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">03 / NETWORKING</div>
+      <h3>Jaringan Warnet</h3>
+      <p>Merancang topologi jaringan warnet 10 PC dengan billing system.</p>
+      <div class="tags"><span>Topologi</span><span>LAN</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">04 / HARDWARE</div>
+      <h3>Perakitan PC</h3>
+      <p>Merakit PC rakitan untuk kebutuhan gaming &amp; editing video.</p>
+      <div class="tags"><span>Hardware</span><span>Troubleshoot</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">05 / SECURITY</div>
+      <h3>Firewall Config</h3>
+      <p>Setup firewall rules untuk melindungi server dari serangan dasar.</p>
+      <div class="tags"><span>UFW</span><span>Iptables</span></div>
+    </div>
+
+    <div class="project-card placeholder">
+      <div class="project-num">06 / SOON</div>
+      <h3>Project Baru</h3>
+      <p>Segera hadir — project selanjutnya sedang dikerjakan.</p>
+      <div class="tags"><span>Coming Soon</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="content" id="contact">
+  <div class="page-header">
+    <p class="tag">// GET IN TOUCH</p>
+    <h1>Hubungi <span>Saya</span></h1>
+  </div>
+
+  <div class="contact-grid">
+    <a href="mailto:hello@aftour.my.id" class="contact-card">
+      <div class="contact-icon">✉</div>
+      <h3>Email</h3>
+      <p>hello@aftour.my.id</p>
+    </a>
+
+    <a href="https://github.com/azizanaftur" class="contact-card">
+      <div class="contact-icon">◆</div>
+      <h3>GitHub</h3>
+      <p>@azizanaftur</p>
+    </a>
+
+    <a href="https://instagram.com/" class="contact-card">
+      <div class="contact-icon">◉</div>
+      <h3>Instagram</h3>
+      <p>@username</p>
+    </a>
+
+    <a href="https://wa.me/628xxxxxxxxxx" class="contact-card">
+      <div class="contact-icon">✆</div>
+      <h3>WhatsApp</h3>
+      <p>+62 8xx-xxxx-xxxx</p>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <footer>
   <p>© 2025 Azizan Aftur — Built with <span class="heart">❤</span></p>
 </footer>
