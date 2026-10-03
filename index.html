@@ -1,194 +1,472 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Azizan Aftur — Portfolio</title>
+<title>Azizan Aftur // Fragmen Perjalanan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- ============ LOADER ============ -->
-<div class="loader" id="loader">
-  <div class="loader-scan"></div>
-  <div class="loader-text">
-    <span>&gt; initializing system...</span>
-    <span>&gt; loading portfolio...</span>
-    <span>&gt; status: <b class="ok">OK</b></span>
+<!-- ============ BACKGROUND SCENE ============ -->
+<div class="scene">
+  <div class="horizon-glow"></div>
+  <div class="ridge">
+    <svg viewBox="0 0 1400 600" preserveAspectRatio="none">
+      <path d="M0,600 L0,420 L100,360 L200,400 L300,320 L420,380 L540,300 L660,370 L780,320 L900,390 L1020,340 L1140,400 L1260,350 L1400,410 L1400,600 Z"
+            fill="#0a0e18" opacity=".55"/>
+      <path d="M0,600 L0,480 L140,430 L260,470 L380,400 L520,460 L660,410 L800,470 L940,420 L1080,480 L1220,430 L1400,490 L1400,600 Z"
+            fill="#06080e" opacity=".85"/>
+      <path d="M0,600 L0,540 L160,500 L300,530 L440,490 L600,530 L760,500 L920,540 L1080,505 L1240,545 L1400,520 L1400,600 Z"
+            fill="#04050a"/>
+    </svg>
   </div>
+  <div class="veil"></div>
+  <div class="veil"></div>
+  <div class="veil"></div>
 </div>
 
-<!-- ============ GRID BG ============ -->
-<div class="grid-bg"></div>
+<!-- ============ PARTICLES ============ -->
+<div class="particles" id="particles"></div>
+
+<!-- ============ TRANSITION OVERLAY ============ -->
+<div class="veil-overlay" id="veilOverlay">
+  <div class="veil-dark"></div>
+  <div class="veil-text">BERPINDAH</div>
+</div>
 
 <!-- ============ NAVBAR ============ -->
 <nav>
-  <div class="logo">
-    <span class="bracket">[</span>azizan<span class="at">@</span>aftour<span class="bracket">]</span>
-  </div>
+  <div class="logo">AFTUR<span>.</span></div>
   <ul>
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#project">Project</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#" data-page="home" class="active">Pembuka</a></li>
+    <li><a href="#" data-page="about">Tentang</a></li>
+    <li><a href="#" data-page="skill">Keahlian</a></li>
+    <li><a href="#" data-page="works">Karya</a></li>
+    <li><a href="#" data-page="notes">Catatan</a></li>
+    <li><a href="#" data-page="contact">Kontak</a></li>
   </ul>
 </nav>
 
-<!-- ============ HOME / HERO ============ -->
-<header class="hero" id="home">
-  <div class="coord top-left">X: 108.5</div>
-  <div class="coord top-right">Y: 32.7</div>
+<main>
 
-  <div class="hero-content">
-    <p class="tag">// PORTFOLIO — 2025</p>
-    <h1>Azizan<br><span>Aftur</span></h1>
-    <p class="subtitle">Teknik Komputer &amp; Jaringan</p>
-    <p class="desc">
-      Membangun infrastruktur jaringan yang handal,
-      mengelola server, dan mendalami dunia cybersecurity.
-    </p>
-    <div class="buttons">
-      <a href="#project" class="btn primary">Lihat Project →</a>
-      <a href="#contact" class="btn">Hubungi Saya</a>
+<!-- ============ HOME ============ -->
+<section class="page active" id="home">
+  <div class="home-wrap">
+    <div class="home-content">
+
+      <div class="ornament">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond"></span>
+        <span class="ornament-line right"></span>
+      </div>
+
+      <div class="home-subtitle">Sebuah Arsip Personal</div>
+
+      <h1 class="home-title">
+        Di antara kabel dan<br>
+        baris perintah, aku<br>
+        belajar bersabar
+        <span class="home-name">AZIZAN AFTUR</span>
+      </h1>
+
+      <p class="home-description">
+        Ini bukan portofolio yang berteriak. Ini hanya ruang kecil
+        tempat aku menyimpan jejak — tentang jaringan yang menghubungkan
+        banyak hal, tentang Linux yang mengajarku ketenangan, dan
+        tentang mimpi menjadi Cloud Engineer suatu hari nanti.
+      </p>
+
+      <div class="scroll-hint">
+        <span class="scroll-hint-text">Pilih Halaman</span>
+        <span class="scroll-hint-line"></span>
+      </div>
+
     </div>
   </div>
-
-  <div class="coord bottom-left">Z: 0.00</div>
-  <div class="coord bottom-right">REV: 1.0</div>
-</header>
+</section>
 
 <!-- ============ ABOUT ============ -->
-<section class="content" id="about">
-  <div class="page-header">
-    <p class="tag">// ABOUT ME</p>
-    <h1>Tentang <span>Saya</span></h1>
+<section class="page" id="about">
+  <div class="section-head">
+    <span class="section-head-label">Bagian Pertama</span>
+    <h2 class="section-head-title">Tentang yang Menulis</h2>
   </div>
 
-  <div class="about-grid">
-    <div class="avatar-box">
-      <div class="avatar-initial">AZ</div>
-      <p class="avatar-label">// PHOTO PENDING</p>
+  <div class="about-wrap">
+    <div class="portrait">
+      <div class="portrait-frame">
+        <span class="portrait-initial">A</span>
+      </div>
+      <div class="portrait-name">Azizan<br>Aftur</div>
+      <div class="portrait-role">Calon Cloud Engineer</div>
+      <div class="portrait-divider"></div>
     </div>
 
-    <div class="about-text">
-      <h2>// Siapa Saya?</h2>
+    <div class="narrative">
       <p>
-        Halo! Saya <b>Azizan Aftur</b>, siswa <b>Teknik Komputer &amp; Jaringan (TKJ)</b>
-        yang passionate di dunia networking, server administration, dan cybersecurity.
-      </p>
-      <p>
-        Saya suka ngulik Linux, konfigurasi Mikrotik, dan belajar hal-hal baru tentang
-        infrastruktur IT. Tujuan saya: jadi Network Engineer yang handal.
+        Namaku Azizan. Orang-orang memanggilku Aftur. Aku duduk
+        di kelas XI TKJ, dan aku suka hal-hal yang tidak
+        terlihat — paket data yang bergerak diam-diam, service
+        yang berjalan tanpa suara, dan sistem yang bekerja
+        meski tak ada yang menonton.
       </p>
 
-      <h2>// Pendidikan</h2>
-      <ul class="timeline">
-        <li><span class="year">2023 - Sekarang</span> SMK — Teknik Komputer &amp; Jaringan</li>
-        <li><span class="year">2020 - 2023</span> SMP</li>
-        <li><span class="year">2014 - 2020</span> SD</li>
-      </ul>
+      <p>
+        Aku belajar jaringan karena penasaran bagaimana
+        komputer bisa saling bicara. Aku belajar Linux karena
+        ingin tahu bagaimana rasanya membangun dari nol. Aku
+        belajar Docker karena ingin tahu bagaimana sesuatu
+        bisa hidup di mana saja.
+      </p>
 
-      <h2>// Skills</h2>
-      <div class="skills">
-        <div class="skill"><span>Networking</span><div class="bar"><div style="width:80%"></div></div></div>
-        <div class="skill"><span>Linux</span><div class="bar"><div style="width:75%"></div></div></div>
-        <div class="skill"><span>Mikrotik</span><div class="bar"><div style="width:70%"></div></div></div>
-        <div class="skill"><span>Hardware</span><div class="bar"><div style="width:65%"></div></div></div>
-        <div class="skill"><span>Security</span><div class="bar"><div style="width:55%"></div></div></div>
+      <p>
+        Aku belum sampai. Tapi aku tahu arah. Dan itu sudah
+        cukup untuk membuatku terus melangkah.
+      </p>
+
+      <div class="facts">
+        <div class="facts-title">Catatan Singkat</div>
+
+        <div class="fact">
+          <span class="fact-label">Nama</span>
+          <span class="fact-value">Azizan Aftur</span>
+        </div>
+
+        <div class="fact">
+          <span class="fact-label">Kelas</span>
+          <span class="fact-value">XI TKJ</span>
+        </div>
+
+        <div class="fact">
+          <span class="fact-label">Fokus</span>
+          <span class="fact-value">Networking &amp; Cloud</span>
+        </div>
+
+        <div class="fact">
+          <span class="fact-label">Tujuan</span>
+          <span class="fact-value">Cloud Engineer</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PROJECT ============ -->
-<section class="content" id="project">
-  <div class="page-header">
-    <p class="tag">// MY WORKS</p>
-    <h1>Project <span>Saya</span></h1>
+<!-- ============ SKILL ============ -->
+<section class="page" id="skill">
+  <div class="section-head">
+    <span class="section-head-label">Bagian Kedua</span>
+    <h2 class="section-head-title">Yang Sedang Dipelajari</h2>
   </div>
 
-  <div class="project-grid">
-    <div class="project-card">
-      <div class="project-num">01 / NETWORKING</div>
-      <h3>Konfigurasi VLAN</h3>
-      <p>Membangun VLAN di switch managed untuk segmentasi jaringan kantor kecil.</p>
-      <div class="tags"><span>Mikrotik</span><span>VLAN</span><span>Switch</span></div>
+  <div class="skill-wrap">
+    <p class="skill-intro">
+      Ini bukan daftar pameran. Ini hanya catatan jujur
+      tentang apa yang sedang aku tekuni dan seberapa
+      dalam aku sudah masuk ke dalamnya.
+    </p>
+
+    <div class="skill-list">
+
+      <div class="skill-item">
+        <span class="skill-index">I</span>
+        <div class="skill-info">
+          <span class="skill-name">Networking</span>
+          <span class="skill-desc">Routing, VLAN, firewall — memahami bagaimana paket data menemukan jalannya sendiri di antara kerumitan.</span>
+        </div>
+        <div>
+          <div class="skill-meter"><div class="skill-meter-fill" data-width="88%"></div></div>
+          <div class="skill-percent">88%</div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-index">II</span>
+        <div class="skill-info">
+          <span class="skill-name">Linux</span>
+          <span class="skill-desc">Terminal, service, server administration — belajar bahwa kesederhanaan sering lebih kuat dari kerumitan.</span>
+        </div>
+        <div>
+          <div class="skill-meter"><div class="skill-meter-fill" data-width="80%"></div></div>
+          <div class="skill-percent">80%</div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-index">III</span>
+        <div class="skill-info">
+          <span class="skill-name">Docker</span>
+          <span class="skill-desc">Container, image, volume — membangun sesuatu yang bisa hidup di mana saja tanpa harus mengubah rumahnya.</span>
+        </div>
+        <div>
+          <div class="skill-meter"><div class="skill-meter-fill" data-width="85%"></div></div>
+          <div class="skill-percent">85%</div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-index">IV</span>
+        <div class="skill-info">
+          <span class="skill-name">MikroTik</span>
+          <span class="skill-desc">RouterOS, Winbox, routing — belajar bahwa jalan yang benar belum tentu yang paling pendek.</span>
+        </div>
+        <div>
+          <div class="skill-meter"><div class="skill-meter-fill" data-width="78%"></div></div>
+          <div class="skill-percent">78%</div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-index">V</span>
+        <div class="skill-info">
+          <span class="skill-name">Cisco</span>
+          <span class="skill-desc">Konfigurasi perangkat, simulasi topologi, eksperimen di Packet Tracer.</span>
+        </div>
+        <div>
+          <div class="skill-meter"><div class="skill-meter-fill" data-width="82%"></div></div>
+          <div class="skill-percent">82%</div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-index">VI</span>
+        <div class="skill-info">
+          <span class="skill-name">Cloud</span>
+          <span class="skill-desc">Infrastruktur awan, deployment, dan mimpi tentang server yang tidak pernah tidur.</span>
+        </div>
+        <div>
+          <div class="skill-meter"><div class="skill-meter-fill" data-width="70%"></div></div>
+          <div class="skill-percent">70%</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKS ============ -->
+<section class="page" id="works">
+  <div class="section-head">
+    <span class="section-head-label">Bagian Ketiga</span>
+    <h2 class="section-head-title">Hal yang Pernah Dikerjakan</h2>
+  </div>
+
+  <div class="works-wrap">
+    <p class="works-intro">
+      Tidak semuanya besar. Tidak semuanya selesai. Tapi
+      semuanya adalah bagian dari perjalanan yang masih
+      berlangsung sampai sekarang.
+    </p>
+
+    <div class="works-grid">
+
+      <div class="work">
+        <div class="work-index">Proyek 01</div>
+        <h3 class="work-title">Website Multi-Container Docker</h3>
+        <p class="work-desc">
+          Eksperimen membangun website dengan beberapa service
+          yang berjalan berdampingan — Nginx, aplikasi, dan
+          volume untuk menyimpan data.
+        </p>
+        <div class="work-foot">
+          <span class="work-status">Selesai</span>
+          <span class="work-year">2024</span>
+        </div>
+      </div>
+
+      <div class="work">
+        <div class="work-index">Proyek 02</div>
+        <h3 class="work-title">Lab Jaringan Cisco &amp; MikroTik</h3>
+        <p class="work-desc">
+          Simulasi jaringan dengan routing, VLAN, dan firewall.
+          Bukan sekadar konfigurasi, tapi memahami kenapa
+          sebuah paket melewati jalur tertentu.
+        </p>
+        <div class="work-foot">
+          <span class="work-status">Berjalan</span>
+          <span class="work-year">2024</span>
+        </div>
+      </div>
+
+      <div class="work">
+        <div class="work-index">Proyek 03</div>
+        <h3 class="work-title">Perjalanan Menuju Awan</h3>
+        <p class="work-desc">
+          Bukan proyek dengan hasil akhir. Ini catatan tentang
+          belajar bagaimana aplikasi dideploy dan bagaimana
+          infrastruktur bekerja di balik layar.
+        </p>
+        <div class="work-foot">
+          <span class="work-status">Naik</span>
+          <span class="work-year">Sekarang</span>
+        </div>
+      </div>
+
+      <div class="work">
+        <div class="work-index">Proyek 04</div>
+        <h3 class="work-title">Server Lokal di Rumah</h3>
+        <p class="work-desc">
+          Belajar menghidupkan server sendiri — install OS,
+          konfigurasi service, sampai memastikan semua
+          berjalan stabil. Sederhana, tapi mengajarkan sabar.
+        </p>
+        <div class="work-foot">
+          <span class="work-status">Selesai</span>
+          <span class="work-year">2023</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOTES ============ -->
+<section class="page" id="notes">
+  <div class="section-head">
+    <span class="section-head-label">Bagian Keempat</span>
+    <h2 class="section-head-title">Catatan Kecil</h2>
+  </div>
+
+  <div class="notes-wrap">
+    <p class="notes-intro">
+      Ada hal-hal yang tidak tercatat di rapor atau sertifikat.
+      Hal-hal itu aku simpan di sini, dalam bentuk yang paling
+      jujur yang bisa aku tuliskan.
+    </p>
+
+    <div class="note">
+      <div class="note-date">Awal Mula</div>
+      <div class="note-body">
+        <h3 class="note-title">Saat Pertama Kali Sadar Jaringan Itu Menarik</h3>
+        <p class="note-text">
+          Dulu aku pikir jaringan itu membosankan. Tapi suatu
+          hari, aku melihat bagaimana sebuah paket data bisa
+          berjalan dari satu komputer ke komputer lain tanpa
+          tersesat. Sejak itu, aku mulai penasaran.
+        </p>
+      </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-num">02 / SERVER</div>
-      <h3>Setup Web Server</h3>
-      <p>Instalasi &amp; konfigurasi Nginx + PHP + MySQL di VPS Ubuntu.</p>
-      <div class="tags"><span>Linux</span><span>Nginx</span><span>VPS</span></div>
+    <div class="note">
+      <div class="note-date">Pertengahan</div>
+      <div class="note-body">
+        <h3 class="note-title">Ketika Terminal Menjadi Rumah</h3>
+        <p class="note-text">
+          Linux mengubah cara aku melihat komputer. Setiap
+          perintah adalah keputusan. Setiap kesalahan adalah
+          pelajaran. Aneh, tapi justru di sana aku merasa
+          lebih bebas.
+        </p>
+      </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-num">03 / NETWORKING</div>
-      <h3>Jaringan Warnet</h3>
-      <p>Merancang topologi jaringan warnet 10 PC dengan billing system.</p>
-      <div class="tags"><span>Topologi</span><span>LAN</span></div>
+    <div class="note">
+      <div class="note-date">Belakangan</div>
+      <div class="note-body">
+        <h3 class="note-title">Docker dan Pelajaran tentang Batasan</h3>
+        <p class="note-text">
+          Aku pikir container hanya cara lain menjalankan
+          aplikasi. Ternyata lebih dari itu. Docker
+          mengajarku bahwa batasan yang jelas justru membuat
+          sesuatu lebih mudah dipahami.
+        </p>
+      </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-num">04 / HARDWARE</div>
-      <h3>Perakitan PC</h3>
-      <p>Merakit PC rakitan untuk kebutuhan gaming &amp; editing video.</p>
-      <div class="tags"><span>Hardware</span><span>Troubleshoot</span></div>
+    <div class="note">
+      <div class="note-date">Sekarang</div>
+      <div class="note-body">
+        <h3 class="note-title">Menatap Awan, Berharap Bisa Sampai</h3>
+        <p class="note-text">
+          Aku belum tahu bagaimana caranya sampai ke sana.
+          Tapi aku tahu satu hal: aku tidak akan berhenti
+          di sini. Awan itu luas, dan aku baru belajar
+          melihatnya dari kejauhan.
+        </p>
+      </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-num">05 / SECURITY</div>
-      <h3>Firewall Config</h3>
-      <p>Setup firewall rules untuk melindungi server dari serangan dasar.</p>
-      <div class="tags"><span>UFW</span><span>Iptables</span></div>
-    </div>
-
-    <div class="project-card placeholder">
-      <div class="project-num">06 / SOON</div>
-      <h3>Project Baru</h3>
-      <p>Segera hadir — project selanjutnya sedang dikerjakan.</p>
-      <div class="tags"><span>Coming Soon</span></div>
-    </div>
   </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="content" id="contact">
-  <div class="page-header">
-    <p class="tag">// GET IN TOUCH</p>
-    <h1>Hubungi <span>Saya</span></h1>
+<section class="page" id="contact">
+  <div class="section-head">
+    <span class="section-head-label">Bagian Kelima</span>
+    <h2 class="section-head-title">Kalau Ingin Menyapa</h2>
   </div>
 
-  <div class="contact-grid">
-    <a href="mailto:hello@aftour.my.id" class="contact-card">
-      <div class="contact-icon">✉</div>
-      <h3>Email</h3>
-      <p>hello@aftour.my.id</p>
-    </a>
+  <div class="contact-wrap">
+    <p class="contact-intro">
+      Tidak ada yang istimewa di sini. Hanya sebuah pintu
+      kecil yang selalu terbuka untuk siapa saja yang ingin
+      berbicara tentang teknologi atau belajar bersama.
+    </p>
 
-    <a href="https://github.com/azizanaftur" class="contact-card">
-      <div class="contact-icon">◆</div>
-      <h3>GitHub</h3>
-      <p>@azizanaftur</p>
-    </a>
+    <div class="contact-panel">
+      <div class="contact-head">
+        <span class="contact-label">Saluran Terbuka</span>
+        <div class="contact-bars">
+          <span class="contact-bar"></span>
+          <span class="contact-bar"></span>
+          <span class="contact-bar"></span>
+          <span class="contact-bar"></span>
+        </div>
+      </div>
 
-    <a href="https://instagram.com/" class="contact-card">
-      <div class="contact-icon">◉</div>
-      <h3>Instagram</h3>
-      <p>@username</p>
-    </a>
+      <div class="contact-rows">
 
-    <a href="https://wa.me/628xxxxxxxxxx" class="contact-card">
-      <div class="contact-icon">✆</div>
-      <h3>WhatsApp</h3>
-      <p>+62 8xx-xxxx-xxxx</p>
-    </a>
+        <div class="contact-row">
+          <span class="contact-key">Nama</span>
+          <span class="contact-value">Azizan Aftur</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-key">Email</span>
+          <span class="contact-value">hello@aftour.my.id</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-key">GitHub</span>
+          <span class="contact-value">github.com/azizanaftur</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-key">Sekolah</span>
+          <span class="contact-value">SMK — Jurusan TKJ</span>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-key">Prinsip</span>
+          <span class="contact-value ember">"Bangun, jalankan, pahami."</span>
+        </div>
+
+      </div>
+
+      <div class="signature">
+        — Aftur, di suatu malam yang sunyi
+      </div>
+    </div>
   </div>
 </section>
 
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer>
-  <p>© 2025 Azizan Aftur — Built with <span class="heart">❤</span></p>
+  <div class="footer-mark">◇ ◈ ◇</div>
+  <p class="name">Azizan Aftur</p>
+  <p>Fragmen dari sebuah perjalanan yang belum selesai</p>
+  <p class="quote">
+    "Yang penting bukan seberapa cepat sampai,<br>
+    tapi seberapa dalam memahami jalan yang dilalui."
+  </p>
 </footer>
 
 <script src="script.js"></script>
