@@ -1,48 +1,44 @@
-// =====================
+ // =====================
 // PAGE LOADER
 // =====================
 (function() {
   const loader = document.getElementById('loader');
-  const loaderPage = document.getElementById('loaderPage');
 
-  // Ambil nama halaman dari URL
-  const path = window.location.pathname.split('/').pop() || 'index.html';
-  const pageName = path.replace('.html', '') || 'home';
-  if (loaderPage) loaderPage.textContent = pageName;
-
-  // Sembunyikan loader setelah halaman siap
   window.addEventListener('load', () => {
     setTimeout(() => {
-      if (loader) loader.classList.add('hide');
-    }, 1400); // 1.4 detik
+      loader.classList.add('hide');
+    }, 1400);
   });
 })();
 
 // =====================
-// TRANSISI ANTAR HALAMAN
+// NAV ACTIVE STATE ON SCROLL
 // =====================
-document.querySelectorAll('a[href$=".html"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
+const sections = document.querySelectorAll('section[id], header[id]');
+const navLinks = document.querySelectorAll('nav ul a');
 
-    // Skip kalau link eksternal atau anchor
-    if (href.startsWith('http') || href.startsWith('#')) return;
-    if (this.target === '_blank') return;
+window.addEventListener('scroll', () => {
+  let current = '';
+  const scrollY = window.scrollY;
 
-    e.preventDefault();
-    const loader = document.getElementById('loader');
-    if (loader) {
-      loader.classList.remove('hide');
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.offsetHeight;
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute('id');
     }
+  });
 
-    setTimeout(() => {
-      window.location.href = href;
-    }, 700);
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
   });
 });
 
 // =====================
-// ANIMASI SCROLL (muncul saat masuk viewport)
+// SCROLL ANIMATION
 // =====================
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -53,10 +49,14 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.prev-card, .project-card, .contact-card, .about-text, .avatar-box')
-  .forEach(el => observer.observe(el));
+document.querySelectorAll(
+  '.project-card, .contact-card, .about-text, .avatar-box, .skill'
+).forEach(el => observer.observe(el));
 
 // =====================
-// KURSOR BLINK (opsional)
+// CONSOLE SIGNATURE
 // =====================
-console.log('%c[aftour] system loaded ✓', 'color:#ffd60a; font-family:monospace; font-size:14px;');
+console.log(
+  '%c[aftour] system loaded ✓',
+  'color:#ffd60a; font-family:monospace; font-size:14px;'
+);
